@@ -1,0 +1,89 @@
+Overview
+This repository contains RStudio code for conducting tests and interclass correlation analysis. The provided code allows users to perform various statistical tests and calculate interclass correlation coefficients using R programming language. Please note that the file naming and location should be adjusted according to the user's computer file structure.
+Repository Structure
+The repository includes the following files:
+test_analysis.R: This file contains the R code for performing statistical tests. Users can modify the code according to their specific test requirements. Please make sure to update the file location and naming conventions as per your computer's file structure.
+icc_analysis.R: This file contains the R code for calculating interclass correlation coefficients. Users can customize the code based on their dataset and analysis needs. Adjust the file location and naming conventions to match your local file structure.
+Getting Started
+To use the provided RStudio code, follow these steps:
+Ensure that R and RStudio are installed on your computer.
+Clone or download this repository to your local machine.
+Open RStudio and navigate to the directory where you saved the downloaded files.
+Open the desired R script file (test_analysis.R or icc_analysis.R) in RStudio.
+Modify the code as needed, updating the file naming and location based on your local file structure.
+Execute the code line by line or run the script to perform the desired tests or calculate interclass correlation coefficients.
+Please note that the code provided is a starting point, and you may need to adapt it to suit your specific analysis requirements.
+Support and Contributions
+This repository is provided as-is, and the code should be used at your discretion. If you encounter any issues or have questions about the code, please feel free to open an issue in the repository. Contributions to enhance the code or add additional functionalities are also welcome. Fork the repository, make your modifications, and submit a pull request.
+Disclaimer
+Please remember to exercise caution and verify the statistical tests and interclass correlation analysis results. The code in this repository should be used for research or educational purposes and is not intended as professional or clinical advice.
+Happy analyzing with RStudio!
+
+
+### Libraries needed ##############################################################################
+
+library(data.table) ### for t-test building fileslibrary(readr) ### read CSV file
+
+library(psych) ### A general-purpose toolbox developed originally for personality, psychometric theory and experimental psychology.
+
+library(lpSolve) ### software for solving linear, integer and mixed integer programs.
+library(irr) ### Coefficients of Interrater Reliability and Agreement for quantitative, ordinal and nominal data: ICC, Finn-Coefficient, Robinson's A, Kendall's W, Cohen's Kappa
+ICC(data) ### test to determine the reliability of scores through evaluating the range of various scores of the equal individual to the whole version throughout all scores and all individuals.
+
+
+### Create a file list with all filesFileList <- list.files(path = "//YOUR PATH", recursive = TRUE, pattern = "\\.csv$", full.names = TRUE)
+
+neutral <- readr::read_csv(FileList, id = "file_name",  col_name=TRUE)
+FileList <- list.files(path = "//YOUR PATH", recursive = TRUE, pattern = "\\.csv$", full.names = TRUE)calm <- readr::read_csv(FileList, id = "file_name",  col_name=TRUE)FileList <- list.files(path = "//YOUR PATH", recursive = TRUE, pattern = "\\.csv$", full.names = TRUE)tired <- readr::read_csv(FileList, id = "file_name",  col_name=TRUE)
+
+FileList <- list.files(path = "//YOUR PATH", recursive = TRUE, pattern = "\\.csv$", full.names = TRUE)
+
+tension <- readr::read_csv(FileList, id = "file_name",  col_name=TRUE)
+
+FileList <- list.files(path = "//YOUR PATH", recursive = TRUE, pattern = "\\.csv$", full.names = TRUE)
+
+excite <- readr::read_csv(FileList, id = "file_name",  col_name=TRUE)
+
+
+### Create file list with all files by Arousal and Valence
+
+FileList <- list.files(path = "//YOUR PATH", recursive = TRUE, pattern = "\\.csv$", full.names = TRUE)
+
+higarous <- readr::read_csv(FileList, id = "file_name",  col_name=TRUE)
+
+FileList <- list.files(path = "//YOUR PATH", recursive = TRUE, pattern = "\\.csv$", full.names = TRUE)
+
+loarous <- readr::read_csv(FileList, id = "file_name",  col_name=TRUE)
+
+FileList <- list.files(path = "//YOUR PATH", recursive = TRUE, pattern = "\\.csv$", full.names = TRUE)
+
+posval <- readr::read_csv(FileList, id = "file_name",  col_name=TRUE)
+
+FileList <- list.files(path = "//YOUR PATH", recursive = TRUE, pattern = "\\.csv$", full.names = TRUE)
+
+negval <- readr::read_csv(FileList, id = "file_name",  col_name=TRUE)
+
+
+###
+X1(timestamp),X2(EMG1),X3(EMG2),X4(ECG),X5(EDA),X6(PZT),X7-9(ACC) #### data structure
+
+### Run T-Test
+
+t.test(calm[,2], tired[,2], paired = FALSE)
+
+#### T-Test operations
+
+myttest <- t.test(calm[,2], tired[,2], paired = FALSE) ### embed test in object
+
+attributes(myttest) #### query attributes 
+
+myttest$p.value ### ask for individual attributes
+
+
+FileList <- list.files(path = "//YOUR PATH", recursive = TRUE, pattern = "\\.csv$", full.names = TRUE)
+
+EDA <- readr::read_csv(FileList,  col_name=TRUE)
+
+ICC(EDA)
+
+Please see ICC help for correct configuration of the test.
