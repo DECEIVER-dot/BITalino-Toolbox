@@ -1,6 +1,3 @@
-# DECEIVER-dataset
-A Comprehensive Dataset of Elicited Emotions
-
 Repository Name: MaxMSP Applications for IRCAM R-IoT Module and Experiment Annotation
 
 Overview
