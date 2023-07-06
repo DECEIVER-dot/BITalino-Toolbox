@@ -1,4 +1,4 @@
-Repository Name: MaxMSP Applications for IRCAM R-IoT Module and Experiment Annotation
+Repository Name: BITalino-Toolbox for IRCAM R-IoT Module and Experiment Annotation
 
 Overview
 This repository contains three applications developed in MaxMSP that enable direct communication with an IRCAM R-IoT module embedded in a BITalino board. The applications provide various functionalities, including biosignal data recording, Bluetooth connectivity, and interactive annotation while viewing video recordings of experiments. Please note that the software is designed to work with the MaxMSP programming environment and requires external libraries for specific functionalities.
