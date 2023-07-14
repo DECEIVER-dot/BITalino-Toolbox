@@ -1,15 +1,14 @@
 Repository Name: BITalino-Toolbox
 
-Overview
-This repository contains three applications developed in MaxMSP that enable direct communication both via Bluetooth and IRCAM R-IoT module embedded in a BITalino board. The applications provide various functionalities, including biosignal data recording, Bluetooth connectivity, and interactive annotation while viewing video recordings of experiments. Please note that the software is designed to work with the MaxMSP programming environment and requires external libraries for specific functionalities.
+Overview: This repository contains three applications developed in MaxMSP that enable direct communication both via Bluetooth and IRCAM R-IoT module embedded in a BITalino board. The applications provide various functionalities, including biosignal data recording, Bluetooth connectivity, and interactive annotation while viewing video recordings of experiments. Please note that the software is designed to work with the MaxMSP programming environment and requires external libraries for specific functionalities.
 
-Application 1: IRCAM R-IoT Module Data Recorder (USB)
+Application 1: BITalino board with IRCAM R-IoT Module Data Recorder (WiFi)
 The first application allows seamless communication via a USB connection with the IRCAM R-IoT module on the BITalino board. It lets the user record biosignal data directly into a CSV file format with two different sample rates. The recorded data is saved in its raw form without normalization or interpolation. The two available sample rates are:
   Sample rate of the board: The application records data at the native sample rate of the BITalino board.
   2ms sample rate: Additionally, the application provides the option to record data at a fixed 2ms sample rate.
 Please be aware that the current software version does not include data normalization or interpolation. However, a future release will address this issue.
 
-Application 2: IRCAM R-IoT Module Data Recorder (Bluetooth)
+Application 2: BITalino board with BTLE (Bluetooth)
 The second application builds upon the functionality of the first application but adds Bluetooth connectivity as an alternative communication method. With this application, the user can connect the IRCAM R-IoT module on the BITalino board and the computer using Bluetooth. It provides the same data recording capabilities as the USB version, but please note that motion data is not recorded with this application.
 
 Application 3: Experiment Annotation with Video Recording (Mira and iOS)
